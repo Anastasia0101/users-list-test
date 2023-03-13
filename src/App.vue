@@ -1,9 +1,9 @@
 <script setup>
-
+import Text from './components/UI/Text.vue';
 </script>
 
 <template>
-  <div></div>
+  <Text>Test text</Text>
 </template>
 
 <style lang="sass" scoped>
