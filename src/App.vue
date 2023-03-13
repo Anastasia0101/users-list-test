@@ -6,6 +6,6 @@
   <div></div>
 </template>
 
-<style scoped>
+<style lang="sass" scoped>
 
 </style>
