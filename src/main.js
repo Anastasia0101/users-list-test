@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import "./styles/_main.sass"
+import 'sass-reset';
 
 import './assets/main.css'
 
