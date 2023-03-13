@@ -1,3 +1,9 @@
+<template>
+  <Text :level="level" class="text">
+    <slot />
+  </Text>
+</template>
+
 <script setup>
 import { h } from 'vue';
 
@@ -13,12 +19,6 @@ const Text = (props, context) => {
   return h(tag, context.attrs, context.slots.default());
 }
 </script>
-
-<template>
-  <Text :level="level" class="text">
-    <slot />
-  </Text>
-</template>
 
 <style lang="sass" scoped>
 .text
