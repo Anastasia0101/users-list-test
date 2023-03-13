@@ -1,5 +1,5 @@
 <template>
-  <img src="url" alt="altText">
+  <img :src="url" :alt="altText">
 </template>
 
 <script setup>
