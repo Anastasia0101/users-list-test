@@ -44,5 +44,7 @@ defineProps({
 </script>
 
 <style lang="sass" scoped>
-
+// @import '../../styles/_main'
+.input
+  background-color: $backgroundColor
 </style>
