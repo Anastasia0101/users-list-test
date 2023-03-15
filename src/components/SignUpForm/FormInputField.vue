@@ -5,6 +5,8 @@
     :id="id"
     :type="type"
     :name="name"
+    :value="inputedValue"
+    @input="handleChange"
     :placeholder="placeholder"
     class="input"
   />
@@ -13,9 +15,12 @@
 </template>
 
 <script setup>
+import { useField } from 'vee-validate';
+import { toRef } from 'vue';
+
 import Input from '../UI/Input.vue';
 
-defineProps({
+const props = defineProps({
   id: {
     type: String,
     required: true
@@ -32,19 +37,21 @@ defineProps({
     type: String,
     required: false
   },
-  errorMessage: {
-    type: String,
-    required: false
-  },
   placeholder: {
     type: String,
     default: 'Write here...'
   }
 });
+
+const name = toRef(props, 'name');
+
+const {
+  value: inputedValue,
+  handleChange,
+  errorMessage
+} = useField(name, undefined);
 </script>
 
 <style lang="sass" scoped>
-// @import '../../styles/_main'
-.input
-  background-color: $backgroundColor
+
 </style>
