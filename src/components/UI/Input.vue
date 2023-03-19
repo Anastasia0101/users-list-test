@@ -3,7 +3,8 @@
     :id="id" 
     :type="type" 
     :name="name" 
-    :placeholder="placeholder" 
+    :placeholder="placeholder"
+    :accept="accept"
   />
 </template>
 
@@ -25,6 +26,10 @@ defineProps({
   placeholder: {
     type: String,
     default: 'Write here...'
+  },
+  accept: {
+    type: String,
+    required: false
   }
 });
 </script>

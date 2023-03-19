@@ -25,6 +25,8 @@
     />
 
     <FormPositions name="position"/>
+
+    <FormFileInput name="photo" />
   </form>
 </template>
 
@@ -33,6 +35,7 @@ import * as yup from 'yup';
 import { useForm } from 'vee-validate';
 import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
+import FormFileInput from './FormFileInput.vue';
 
 const formSchema = yup.object({
   name: yup.string().required(),
