@@ -3,9 +3,9 @@
     :id="`position${position.id}`" 
     :type="'radio'" 
     :name="name" 
-    @change="handleChange(position.position)"
+    @change="handleChange(position.name)"
   />
-  <label :for="`${position.id}`">{{ position.position }}</label>
+  <label :for="`${position.id}`">{{ position.name }}</label>
 </template>
 
 <script setup>

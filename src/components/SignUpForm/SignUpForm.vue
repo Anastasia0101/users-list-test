@@ -24,7 +24,7 @@
       :placeholder="'Write phone...'"
     />
 
-    <PositionsList name="position"/>
+    <FormPositions name="position"/>
   </form>
 </template>
 
@@ -32,7 +32,7 @@
 import * as yup from 'yup';
 import { useForm } from 'vee-validate';
 import FormInputField from './FormInputField.vue';
-import PositionsList from './PositionsList/PositionsList.vue';
+import FormPositions from './FormPositions/FormPositions.vue';
 
 const formSchema = yup.object({
   name: yup.string().required(),
