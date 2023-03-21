@@ -30,6 +30,7 @@
 
     <FormSubmitButton 
       :buttonText="'Sign up'"
+      :isDisabled="!meta.valid"
     />
   </form>
 </template>
@@ -50,7 +51,7 @@ const formSchema = yup.object({
   photo: yup.string().required()
 });
 
-useForm({
+const { meta } = useForm({
   validationSchema: formSchema
 });
 </script>

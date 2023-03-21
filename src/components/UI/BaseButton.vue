@@ -1,5 +1,5 @@
 <template>
-  <button :type="buttonType" class="button">
+  <button :type="buttonType" :disabled="isDisabled" class="button">
     <slot />
   </button>
 </template>
@@ -7,7 +7,14 @@
 <script setup>
 
 defineProps({
-  type: String
+  buttonType: {
+    type: String,
+    required: false
+  },
+  isDisabled: {
+    type: Boolean,
+    required: false
+  }
 });
 
 const buttonType = () => type ?? 'button';
