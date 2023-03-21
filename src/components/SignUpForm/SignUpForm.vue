@@ -38,9 +38,9 @@ import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
 
 const formSchema = yup.object({
-  name: yup.string().required(),
-  email: yup.string().required().email(),
-  phone: yup.string().required(),
+  name: yup.string().trim().required(),
+  email: yup.string().trim().required().email(),
+  phone: yup.string().trim().required().matches(/^[+]{0,1}380([0-9]{9})$/),
   position: yup.string().required(),
   photo: yup.string().required()
 });

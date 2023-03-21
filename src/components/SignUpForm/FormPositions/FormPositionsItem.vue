@@ -5,7 +5,7 @@
     :name="name" 
     @change="handleChange(position.name)"
   />
-  <label :for="`${position.id}`">{{ position.name }}</label>
+  <label :for="`position${position.id}`">{{ position.name }}</label>
 </template>
 
 <script setup>
