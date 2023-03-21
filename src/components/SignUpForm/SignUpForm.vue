@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="onFormSubmit()">
     <FormInputField 
       id="name"
       :type="'text'"
@@ -51,7 +51,11 @@ const formSchema = yup.object({
   photo: yup.string().required()
 });
 
-const { meta } = useForm({
+const { meta, values } = useForm({
   validationSchema: formSchema
 });
+
+const onFormSubmit = () => {
+  console.log(values);
+}
 </script>
