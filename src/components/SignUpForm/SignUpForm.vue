@@ -27,6 +27,10 @@
     <FormPositions name="position"/>
 
     <FormFileInput name="photo" />
+
+    <FormSubmitButton 
+      :buttonText="'Sign up'"
+    />
   </form>
 </template>
 
@@ -36,6 +40,7 @@ import { useForm } from 'vee-validate';
 import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
+import FormSubmitButton from './FormSubmitButton.vue';
 
 const formSchema = yup.object({
   name: yup.string().trim().required(),
