@@ -42,6 +42,7 @@ import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
 import FormSubmitButton from './FormSubmitButton.vue';
+import DefaultUserImage from './../../assets/images/default-user.jpg';
 
 const formSchema = yup.object({
   name: yup.string().trim().required(),
@@ -51,11 +52,34 @@ const formSchema = yup.object({
   photo: yup.string().required()
 });
 
-const { meta, values } = useForm({
+const { meta, values: formValues } = useForm({
   validationSchema: formSchema
 });
 
 const onFormSubmit = () => {
-  console.log(values);
+  const formData = new FormData();
+  formData.append('name', formValues.name);
+  formData.append('email', formValues.email);
+  formData.append('phone', formValues.phone);
+  formData.append('position_id', formValues.position);
+  formData.append('photo', formValues.photo);
+  signUpUser(formData);
+}
+
+async function signUpUser(formData) {
+  const usersUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
+  const tokenUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/token';
+
+  const token = await fetch(tokenUrl)
+    .then(response => response.json())
+    .then(result => result.token);
+    
+  fetch(usersUrl, {
+    method: 'POST',
+    headers: {
+      'Token': token
+    },
+    body: formData
+  }).then(response => console.log(response.json()));
 }
 </script>
