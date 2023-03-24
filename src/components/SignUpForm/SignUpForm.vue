@@ -21,6 +21,7 @@
       :type="'text'"
       name="phone"
       :labelText="'Phone'"
+      :input-hint="'+38(XXX)XXX-XX-XX'"
       :placeholder="'Phone'"
     />
 

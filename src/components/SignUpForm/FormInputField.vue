@@ -13,7 +13,10 @@
       :class="{ invalid: !!errorMessage }"
     />
 
-    <p class="field__error"> {{ errorMessage }} </p>
+    <p 
+      class="field__hint"
+      :class="{ error: !!errorMessage }"
+    > {{ errorMessage ?? inputHint }} </p>
   </div>
 </template>
 
@@ -74,10 +77,12 @@ const {
   &::placeholder
     @include base-text
 
-.field__error
+.field__hint
   margin: 0 16px
   @include base-text
   font-size: 12px
+
+.error
   color: #CB3D40
 
 .invalid
