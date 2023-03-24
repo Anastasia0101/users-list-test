@@ -53,5 +53,12 @@ const {
 </script>
 
 <style lang="sass" scoped>
-
+@import ../../styles/__main.sass
+.input 
+  border: 1px solid $borderInputColor
+  border-radius: 4px
+  width: 380px
+  padding: 14px 16px
+  &::placeholder
+    @include base-text
 </style>

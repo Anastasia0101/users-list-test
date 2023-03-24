@@ -5,7 +5,7 @@
       :type="'text'"
       name="name"
       :labelText="'Name'"
-      :placeholder="'Write name...'"
+      :placeholder="'Your name'"
     />
 
     <FormInputField 
@@ -13,7 +13,7 @@
       :type="'email'"
       name="email"
       :labelText="'Email'"
-      :placeholder="'Write email...'"
+      :placeholder="'Email'"
     />
 
     <FormInputField 
@@ -21,7 +21,7 @@
       :type="'text'"
       name="phone"
       :labelText="'Phone'"
-      :placeholder="'Write phone...'"
+      :placeholder="'Phone'"
     />
 
     <FormPositions name="position"/>
@@ -42,7 +42,6 @@ import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
 import FormSubmitButton from './FormSubmitButton.vue';
-import DefaultUserImage from './../../assets/images/default-user.jpg';
 
 const formSchema = yup.object({
   name: yup.string().trim().required(),
