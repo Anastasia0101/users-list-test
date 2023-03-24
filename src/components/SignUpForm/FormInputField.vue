@@ -10,21 +10,18 @@
       @input="handleChange"
       :placeholder="placeholder"
       class="field__input"
+      :class="{ invalid: !!errorMessage }"
     />
 
-    <p v-if="isShowHint">{{ phoneHint }}</p>
     <p class="field__error"> {{ errorMessage }} </p>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useField } from 'vee-validate';
 import { toRef } from 'vue';
 
 import Input from '../UI/Input.vue';
-
-const phoneHint = '+38(XXX)XXX-XX-XX';
 
 const props = defineProps({
   id: {
@@ -43,6 +40,10 @@ const props = defineProps({
     type: String,
     required: false
   },
+  inputHint: {
+    type: String,
+    required: false
+  },
   placeholder: {
     type: String,
     default: 'Write here...'
@@ -56,12 +57,15 @@ const {
   handleChange,
   errorMessage
 } = useField(name, undefined);
-
-const isShowHint = computed(() => name.value === 'phone' ? true : false);
 </script>
 
 <style lang="sass" scoped>
 @import ../../styles/__main.sass
+
+.field
+  display: flex
+  flex-direction: column
+
 .field__input 
   border: 1px solid $borderInputColor
   border-radius: 4px
@@ -69,4 +73,14 @@ const isShowHint = computed(() => name.value === 'phone' ? true : false);
   padding: 14px 16px
   &::placeholder
     @include base-text
+
+.field__error
+  margin: 0 16px
+  @include base-text
+  font-size: 12px
+  color: #CB3D40
+
+.invalid
+  border: 2px solid #CB3D40
+  border-radius: 4px 
 </style>

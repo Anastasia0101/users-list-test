@@ -47,7 +47,7 @@ const formSchema = yup.object({
   name: yup.string().trim().required().label('Name'),
   email: yup.string().trim().required().email().label('Email'),
   phone: yup.string().trim().required()
-    .matches(/^[+]{0,1}380([0-9]{9})$/, 'Phone is invalid')
+    .matches(/^[+]{0,1}380([0-9]{9})$/, '+38(XXX)XXX-XX-XX')
     .label('Phone'),
   position: yup.string().required(),
   photo: yup.string().required()
