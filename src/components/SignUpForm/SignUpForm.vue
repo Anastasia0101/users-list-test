@@ -44,9 +44,11 @@ import FormFileInput from './FormFileInput.vue';
 import FormSubmitButton from './FormSubmitButton.vue';
 
 const formSchema = yup.object({
-  name: yup.string().trim().required(),
-  email: yup.string().trim().required().email(),
-  phone: yup.string().trim().required().matches(/^[+]{0,1}380([0-9]{9})$/),
+  name: yup.string().trim().required().label('Name'),
+  email: yup.string().trim().required().email().label('Email'),
+  phone: yup.string().trim().required()
+    .matches(/^[+]{0,1}380([0-9]{9})$/, 'Phone is invalid')
+    .label('Phone'),
   position: yup.string().required(),
   photo: yup.string().required()
 });

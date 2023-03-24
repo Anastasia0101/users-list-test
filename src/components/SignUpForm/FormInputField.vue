@@ -1,24 +1,30 @@
 <template>
-  <label :for="id">{{ labelText }}</label>
+  <div class="field">
+    <label :for="id" class="field__label">{{ labelText }}</label>
 
-  <Input 
-    :id="id"
-    :type="type"
-    :name="name"
-    :value="inputedValue"
-    @input="handleChange"
-    :placeholder="placeholder"
-    class="input"
-  />
+    <Input 
+      :id="id"
+      :type="type"
+      :name="name"
+      :value="inputedValue"
+      @input="handleChange"
+      :placeholder="placeholder"
+      class="field__input"
+    />
 
-  <p> {{ errorMessage }} </p>
+    <p v-if="isShowHint">{{ phoneHint }}</p>
+    <p class="field__error"> {{ errorMessage }} </p>
+  </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useField } from 'vee-validate';
 import { toRef } from 'vue';
 
 import Input from '../UI/Input.vue';
+
+const phoneHint = '+38(XXX)XXX-XX-XX';
 
 const props = defineProps({
   id: {
@@ -50,11 +56,13 @@ const {
   handleChange,
   errorMessage
 } = useField(name, undefined);
+
+const isShowHint = computed(() => name.value === 'phone' ? true : false);
 </script>
 
 <style lang="sass" scoped>
 @import ../../styles/__main.sass
-.input 
+.field__input 
   border: 1px solid $borderInputColor
   border-radius: 4px
   width: 380px
