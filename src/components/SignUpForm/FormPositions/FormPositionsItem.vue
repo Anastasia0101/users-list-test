@@ -34,14 +34,17 @@ const { handleChange } = useField(name, undefined);
 </script>
 
 <style lang="sass" scoped>
+@import './../../../styles/__main'
 .radio
   display: block
   text-align: left
-  margin-top: 12px
+  margin-top: 13px
 
 .radio__input
   display: none
   &+.radio__label
+    @include base-text
+    line-height: 20px
     display: inline-block
     position: relative
     padding-left: 30px
