@@ -1,12 +1,13 @@
 <template>
   <Title :title="'Working with POST request'" />
-  <form @submit.prevent="onFormSubmit()">
+  <form @submit.prevent="onFormSubmit()" class="form">
     <FormInputField 
       id="name"
       :type="'text'"
       name="name"
       :labelText="'Name'"
       :placeholder="'Your name'"
+      class="form__field"
     />
 
     <FormInputField 
@@ -15,6 +16,7 @@
       name="email"
       :labelText="'Email'"
       :placeholder="'Email'"
+      class="form__field"
     />
 
     <FormInputField 
@@ -24,15 +26,17 @@
       :labelText="'Phone'"
       :input-hint="'+38(XXX)XXX-XX-XX'"
       :placeholder="'Phone'"
+      class="form__field"
     />
 
     <FormPositions name="position"/>
 
-    <FormFileInput name="photo" />
+    <FormFileInput name="photo" class="form__field" />
 
     <FormSubmitButton 
       :buttonText="'Sign up'"
       :isDisabled="!meta.valid"
+      class="form__button"
     />
   </form>
 </template>
@@ -89,3 +93,12 @@ async function signUpUser(formData) {
   }).then(response => console.log(response.json()));
 }
 </script>
+
+<style lang="sass" scoped>
+.form__field
+  margin-top: 50px
+
+.form__button
+  display: block
+  margin: 50px auto 0 
+</style>

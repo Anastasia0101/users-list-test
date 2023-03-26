@@ -1,13 +1,15 @@
 <template>
-  <h3 class="title">Select your position</h3>
-  <ul class="list">
-    <li v-for="position in positions" :key="position.id" class="list__item">
-      <FormPositionsItem
-        :name="name"
-        :position="position"
-      />
-    </li>
-  </ul>
+  <div class="positions-list">
+    <h3 class="positions-list__title">Select your position</h3>
+    <ul class="positions-list__list list">
+      <li v-for="position in positions" :key="position.id" class="list__item">
+        <FormPositionsItem
+          :name="name"
+          :position="position"
+        />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
@@ -30,6 +32,8 @@ const positions = await fetch(urlPositions)
 <style lang="sass" scoped>
 @import './../../../styles/__main.sass'
 
-.title
+.positions-list__title
   @include base-text
+  margin-top: 25px
+
 </style>
