@@ -1,4 +1,5 @@
 <template>
+  <Title :title="'Working with POST request'" />
   <form @submit.prevent="onFormSubmit()">
     <FormInputField 
       id="name"
@@ -39,6 +40,7 @@
 <script setup>
 import * as yup from 'yup';
 import { useForm } from 'vee-validate';
+import Title from '../Title.vue';
 import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
@@ -48,7 +50,9 @@ const formSchema = yup.object({
   name: yup.string().trim().required().label('Name'),
   email: yup.string().trim().required().email().label('Email'),
   phone: yup.string().trim().required()
-    .matches(/^[+]{0,1}38[(]0([0-9]{2}[)]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2}))$/, '+38(XXX)XXX-XX-XX')
+    .matches(
+      /^[+]{0,1}38[(]0([0-9]{2}[)]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2}))$/,
+      '+38(XXX)XXX-XX-XX')
     .label('Phone'),
   position: yup.string().required(),
   photo: yup.string().required()
