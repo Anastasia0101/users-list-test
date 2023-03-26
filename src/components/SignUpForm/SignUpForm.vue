@@ -59,7 +59,7 @@ const formSchema = yup.object({
       '+38(XXX)XXX-XX-XX')
     .label('Phone'),
   position: yup.string().required(),
-  photo: yup.string().required()
+  photo: yup.string().required().default()
 });
 
 const { meta, values: formValues } = useForm({

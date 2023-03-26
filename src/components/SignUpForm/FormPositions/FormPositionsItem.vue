@@ -5,8 +5,8 @@
       :type="'radio'" 
       :name="name" 
       @change="handleChange(position.id)"
-        class="radio__input"
-      />
+      class="radio__input"
+    />
     <label :for="`position${position.id}`" class="radio__label">{{ position.name }}</label>
   </div>
 </template>
@@ -58,7 +58,7 @@ const { handleChange } = useField(name, undefined);
       margin-right: 5px
       width: 20px
       height: 20px
-      border: 1px solid #00BDD3
+      border: 1px solid #D0CFCF
     &:after
       content: ''
       display: block
@@ -72,6 +72,10 @@ const { handleChange } = useField(name, undefined);
       opacity: 0
     &:hover
       cursor: pointer
-  &:checked+.radio__label:after
-    opacity: 1
+  &:checked+.radio__label
+    &:before
+      border: 1px solid #00BDD3
+    &:after
+      opacity: 1
+  
 </style>
