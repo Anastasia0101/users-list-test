@@ -1,5 +1,5 @@
 <template>
-    <BaseButton type="'submit'" :isDisabled="isDisabled">
+    <BaseButton type="'submit'" :isDisabled="isDisabled" class="button">
       {{ buttonText }}
     </BaseButton>
 </template>
@@ -18,3 +18,20 @@ defineProps({
   }
 });
 </script>
+
+<style lang="sass" scoped>
+@import './../../styles/__main'
+
+.button
+  @include base-text
+  padding: 4px 22px
+  border-radius: 80px
+  background-color: $primaryColor
+  &:enabled:hover
+    background-color: #FFE302
+    cursor: pointer
+  &:disabled
+    background-color: #B4B4B4
+    color: #FFFFFF
+
+</style>
