@@ -1,5 +1,5 @@
 <template>
-  <Image :url="photoUrl" :altText="altText" />
+  <Image :url="photoUrl" :altText="altText" class="image" />
 </template>
 
 <script setup>
@@ -16,3 +16,11 @@ defineProps({
   }
 });
 </script>
+
+<style lang="sass" scoped>
+.image
+  width: 70px
+  height: 70px
+  border-radius: 50%
+
+</style>

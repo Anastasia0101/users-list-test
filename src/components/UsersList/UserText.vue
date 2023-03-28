@@ -1,5 +1,5 @@
 <template>
-  <Text>
+  <Text class="text">
     {{ text }}
   </Text>
 </template>
@@ -13,3 +13,12 @@ defineProps({
   }
 });
 </script>
+
+<style lang="sass" scoped>
+@import './../../styles/__main'
+
+.text
+  @include base-text
+  text-align: center
+
+</style>
