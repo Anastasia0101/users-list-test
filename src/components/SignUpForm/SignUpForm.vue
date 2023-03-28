@@ -53,7 +53,7 @@ const formSchema = yup.object({
   email: yup.string().trim().required().email().label('Email'),
   phone: yup.string().trim().required()
     .matches(
-      /^[+]{0,1}38[(]0([0-9]{2}[)]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2}))$/,
+      /^[+]{0,1}380([0-9]{2}([0-9]{7}))$/,
       '+38(XXX)XXX-XX-XX')
     .label('Phone'),
   position: yup.string().required(),
