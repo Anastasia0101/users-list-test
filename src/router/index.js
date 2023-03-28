@@ -6,6 +6,11 @@ const UsersList = () => import('./../components/UsersList/UsersList.vue');
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash }
+    }
+  },
   routes: [ 
     {
       path: '',

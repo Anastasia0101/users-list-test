@@ -1,5 +1,4 @@
 <template>
-  <Title :title="'Working with POST request'" />
   <form @submit.prevent="onFormSubmit()" class="form">
     <FormInputField 
       id="name"
@@ -44,7 +43,6 @@
 <script setup>
 import * as yup from 'yup';
 import { useForm } from 'vee-validate';
-import Title from '../Title.vue';
 import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
