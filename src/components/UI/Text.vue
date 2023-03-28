@@ -1,5 +1,5 @@
 <template>
-  <Text :level="level" class="text">
+  <Text :level="level" :title="title" class="text">
     <slot />
   </Text>
 </template>
@@ -10,6 +10,10 @@ import { h } from 'vue';
 defineProps({
   level: {
     type: Number,
+    required: false
+  },
+  title: {
+    type: String,
     required: false
   }
 });

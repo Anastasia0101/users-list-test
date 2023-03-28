@@ -1,5 +1,5 @@
 <template>
-  <Text class="text">
+  <Text :title="text" class="text">
     {{ text }}
   </Text>
 </template>
@@ -20,5 +20,8 @@ defineProps({
 .text
   @include base-text
   text-align: center
-
+  width: 100%
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap 
 </style>
