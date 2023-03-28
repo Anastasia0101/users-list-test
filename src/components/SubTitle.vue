@@ -1,6 +1,6 @@
 <template>
   <Text class="subtitle">
-    text
+    {{ text }}
   </Text>
 </template>
 
@@ -22,4 +22,6 @@ defineProps({
   @include base-text
   text-align: center
   color: #FFFFFF
+  letter-spacing: 1px
+
 </style>

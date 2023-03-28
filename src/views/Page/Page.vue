@@ -23,4 +23,5 @@ import HomeSection from './HomeSection.vue';
   max-width: 1170px
   width: 100%
   margin: 0 auto 140px
+
 </style>

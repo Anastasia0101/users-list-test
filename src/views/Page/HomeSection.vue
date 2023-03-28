@@ -1,11 +1,15 @@
 <template>
-  <Title 
-    :title="'Test assignment for front - end developer'"
-    :level="1"
-    class="section__title" 
-  />
-  <SubTitle :text="subtitle"/>
-  <LinkButton :path="'#sign-up'" :link-name="'Sign up'"/>
+  <section class="section">
+    <div class="section__content content">
+      <Title 
+        :title="'Test assignment for front-end developer'"
+        :level="1"
+        class="content__title" 
+      />
+      <SubTitle :text="subtitle" class="content__subtitle"/>
+      <LinkButton :path="'#sign-up'" :link-name="'Sign up'" class="content__button"/>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -21,3 +25,34 @@ const subtitle = `
   keeps evolving.
 `;
 </script>
+
+<style lang="sass" scoped>
+@import './../../styles/__main'
+
+.section
+  background-image: url("../../assets/images/background.jpg")
+  background-repeat: no-repeat
+  width: 100%
+  height: 650px
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 16px
+
+.section__content
+  max-width: 380px
+  width: 100%
+
+.content__title
+  color: #FFFFFF
+  // letter-spacing: 1px
+  margin-bottom: 21px
+
+.content__subtitle
+  margin-bottom: 32px
+
+.content__button
+  display: block
+  margin: 0 auto
+
+</style>
