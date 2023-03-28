@@ -1,7 +1,7 @@
 <template>
-  <text level="2" class="title">
+  <Text level="2" class="title">
     {{ title }}
-  </text>
+  </Text>
 </template>
 
 <script setup>

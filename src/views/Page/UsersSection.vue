@@ -1,5 +1,6 @@
 <template>
   <section>
+    <Title :title="'Working with GET request'" />
     <Suspense>
       <template #default>
         <UsersList />
@@ -13,4 +14,5 @@
 
 <script setup>
 import UsersList from '../../components/UsersList/UsersList.vue';
+import Title from '../../components/Title.vue';
 </script>
