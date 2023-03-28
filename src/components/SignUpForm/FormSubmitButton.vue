@@ -24,14 +24,15 @@ defineProps({
 
 .button
   @include base-text
-  padding: 4px 22px
-  border-radius: 80px
-  background-color: $primaryColor
-  &:enabled:hover
-    background-color: #FFE302
-    cursor: pointer
-  &:disabled
-    background-color: #B4B4B4
-    color: #FFFFFF
+  @extend .button
+  // padding: 4px 22px
+  // border-radius: 80px
+  // background-color: $primaryColor
+  // &:enabled:hover
+  //   background-color: #FFE302
+  //   cursor: pointer
+  // &:disabled
+  //   background-color: #B4B4B4
+  //   color: #FFFFFF
 
 </style>

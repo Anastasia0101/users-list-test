@@ -13,6 +13,7 @@
     "modern-normalize": "^1.1.0",
     "sass-reset": "^1.0.4",
     "vee-validate": "^4.8.1",
+    "vite-svg-loader": "^4.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "yup": "^1.0.2"
