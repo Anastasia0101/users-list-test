@@ -4,14 +4,17 @@
       <Logo />
     </div>
     <nav class="header__nav nav">
-      <router-link to="/#users" class="nav__link">Users</router-link>
-      <router-link to="/#sign-up" class="nav__link">Sign up</router-link>
+      <LinkButton :path="'#users'" class="nav__link" :linkName="'Users'"/>
+      <LinkButton :path="'#sign-up'" class="nav__link" :linkName="'Sign up'"/>
+          <!-- <router-link to="/#users" class="nav__link">Users</router-link>
+      <router-link to="/#sign-up" class="nav__link">Sign up</router-link> -->
     </nav>
   </header>
 </template>
 
 <script setup>
 import Logo from './../assets/images/Logo.svg';
+import LinkButton from './LinkButton.vue';
 </script>
 
 <style lang="sass" scoped>
@@ -26,13 +29,8 @@ import Logo from './../assets/images/Logo.svg';
   align-items: center
 
 .nav__link
-  @include base-text
-  @extend .button
-  display: inline-block
-  text-align: center
   margin: 13px 0
   &:first-child
     margin-right: 10px
-  &:hover
-    background-color: #FFE302
+ 
 </style>
