@@ -6,8 +6,6 @@
     <nav class="header__nav nav">
       <LinkButton :path="'#users'" class="nav__link" :linkName="'Users'"/>
       <LinkButton :path="'#sign-up'" class="nav__link" :linkName="'Sign up'"/>
-          <!-- <router-link to="/#users" class="nav__link">Users</router-link>
-      <router-link to="/#sign-up" class="nav__link">Sign up</router-link> -->
     </nav>
   </header>
 </template>

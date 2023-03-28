@@ -11,7 +11,11 @@ defineProps({
   title: {
     type: String,
     required: true
-  }
+  },
+  level: {
+    type: Number,
+    default: 2
+  },
 });
 </script>
 
