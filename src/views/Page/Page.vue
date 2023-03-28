@@ -20,5 +20,5 @@ import SignUpSection from './SignUpSection.vue';
 .main__section
   max-width: 1170px
   width: 100%
-  margin: 0 auto
+  margin: 0 auto 140px
 </style>

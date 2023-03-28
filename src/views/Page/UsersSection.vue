@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <Title :title="'Working with GET request'" />
+  <section class="section">
+    <Title :title="'Working with GET request'" class="section__title"/>
     <Suspense>
       <template #default>
         <UsersList />
@@ -16,3 +16,8 @@
 import UsersList from '../../components/UsersList/UsersList.vue';
 import Title from '../../components/Title.vue';
 </script>
+
+<style lang="sass" scoped>
+.section__title
+  margin-bottom: 50px
+</style>

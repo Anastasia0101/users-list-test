@@ -1,5 +1,5 @@
 <template>
-  <Text level="2" class="title">
+  <Text :level="2" class="title">
     {{ title }}
   </Text>
 </template>
