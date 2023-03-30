@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Text from './../UI/Text.vue';
+import Text from './../../UI/Text.vue';
 defineProps({
   text: {
     type: String,
@@ -15,7 +15,7 @@ defineProps({
 </script>
 
 <style lang="sass" scoped>
-@import './../../styles/__main'
+@import './../../../styles/__main'
 
 .text
   @include base-text

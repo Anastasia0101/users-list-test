@@ -9,7 +9,7 @@
 
 <script setup>
 import Header from '../../components/Header.vue';
-import UsersListSection from './UsersListSection.vue';
+import UsersListSection from './../../components/UsersSection/UsersSection.vue';
 import SignUpSection from './SignUpSection.vue';
 import HomeSection from './HomeSection.vue';
 </script>

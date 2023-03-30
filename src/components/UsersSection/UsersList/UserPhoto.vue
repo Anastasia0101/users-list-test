@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import Image from './../UI/Image.vue';
+import Image from './../../UI/Image.vue';
 
 defineProps({
   photoUrl: {
