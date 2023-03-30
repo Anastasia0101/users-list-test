@@ -32,9 +32,10 @@
 
     <FormFileInput name="photo" class="form__field" />
 
-    <FormSubmitButton 
+    <ActionButton
       :buttonText="'Sign up'"
       :isDisabled="!meta.valid"
+      :type="'submit'"
       class="form__button"
     />
   </form>
@@ -46,7 +47,7 @@ import { useForm } from 'vee-validate';
 import FormInputField from './FormInputField.vue';
 import FormPositions from './FormPositions/FormPositions.vue';
 import FormFileInput from './FormFileInput.vue';
-import FormSubmitButton from './FormSubmitButton.vue';
+import ActionButton from './../ActionButton.vue';
 
 const formSchema = yup.object({
   name: yup.string().trim().required().label('Name'),

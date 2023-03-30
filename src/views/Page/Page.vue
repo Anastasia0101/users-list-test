@@ -2,14 +2,14 @@
   <Header />
   <main class="main">
     <HomeSection class="main__section" />
-    <UsersSection class="main__section" id="users" />
+    <UsersListSection class="main__section" id="users" />
     <SignUpSection class="main__section" id="sign-up"/>
   </main>
 </template>
 
 <script setup>
 import Header from '../../components/Header.vue';
-import UsersSection from './UsersSection.vue';
+import UsersListSection from './UsersListSection.vue';
 import SignUpSection from './SignUpSection.vue';
 import HomeSection from './HomeSection.vue';
 </script>

@@ -9,12 +9,18 @@
         Loading...
       </template>
     </Suspense>
+    <ActionButton
+      :buttonText="'Show more'"
+      :type="'submit'"
+      class="form__button"
+    />
   </section>
 </template>
 
 <script setup>
 import UsersList from '../../components/UsersList/UsersList.vue';
 import Title from '../../components/Title.vue';
+import ActionButton from './../../components/ActionButton.vue';
 </script>
 
 <style lang="sass" scoped>

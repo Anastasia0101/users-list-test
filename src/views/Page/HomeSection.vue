@@ -45,7 +45,6 @@ const subtitle = `
 
 .content__title
   color: #FFFFFF
-  // letter-spacing: 1px
   margin-bottom: 21px
 
 .content__subtitle
