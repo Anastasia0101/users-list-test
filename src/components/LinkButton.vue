@@ -22,6 +22,8 @@ defineProps({
 
 .link
   @extend .button
+  width: 100px
+  height: 34px
   @include base-text
   text-align: center
   display: inline-block

@@ -1,9 +1,9 @@
 <template>
   <section class="section">
-    <Title :title="'Working with GET request'" class="section__title"/>
+    <Title :title="'Working with GET request'" class="section__title" />
     <Suspense>
       <template #default>
-        <UsersList :numberOfUsers="numberOfUsers" @gotAllUsers="disableButton" />
+        <UsersList :numberOfUsers="numberOfUsers" @gotAllUsers="hideButton" class="section__list" />
       </template>
       <template #fallback>
         Loading...
@@ -12,9 +12,9 @@
     <ActionButton
       :buttonText="'Show more'"
       :type="'button'"
-      :isDisabled="isButtonDisabled"
+      v-show="isDisplayButton"
       @click="increaseUsersNumber"
-      class="form__button"
+      class="section__button"
     />
   </section>
 </template>
@@ -26,13 +26,20 @@ import Title from './../Title.vue';
 import ActionButton from './../ActionButton.vue';
 
 const numberOfUsers = ref(6);
-const isButtonDisabled = ref(false);
+const isDisplayButton = ref(true);
 
 const increaseUsersNumber = () => numberOfUsers.value += 6;
-const disableButton = () => isButtonDisabled.value = true;
+const hideButton = () => isDisplayButton.value = false;
 </script>
 
 <style lang="sass" scoped>
 .section__title
   margin-bottom: 50px
+
+.section__list
+  margin-bottom: 50px
+
+.section__button
+  display: block
+  margin: 0 auto
 </style>
