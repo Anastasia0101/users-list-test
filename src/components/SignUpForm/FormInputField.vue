@@ -90,6 +90,7 @@ const {
   &:focus + .field__label,
   &:not(:placeholder-shown) + .field__label
     top: -7px
+    left: 13px
     font-size: 12px
     line-height: 14px
     background-color: $backgroundColor
