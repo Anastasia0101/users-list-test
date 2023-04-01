@@ -1,17 +1,20 @@
 <template>
   <div class="field">
-    <label :for="id" class="field__label">{{ labelText }}</label>
-
     <Input 
       :id="id"
       :type="type"
       :name="name"
       :value="inputedValue"
       @input="handleChange"
-      :placeholder="placeholder"
       class="field__input"
       :class="{ invalid: !!errorMessage }"
     />
+
+    <label 
+      :for="id" 
+      class="field__label" 
+      :class="{ error: !!errorMessage }"
+    >{{ labelText }}</label>
 
     <p 
       class="field__hint"
@@ -68,19 +71,35 @@ const {
 .field
   display: flex
   flex-direction: column
+  position: relative
+
+.field__label
+  @include base-text
+  color: #7E7E7E
+  line-height: unset
+  position: absolute
+  top: 14px
+  left: 16px
+  transition: all .3s ease-in-out
 
 .field__input 
   border: 1px solid $borderInputColor
   border-radius: 4px
   width: 380px
   padding: 14px 16px
-  &::placeholder
-    @include base-text
-
+  &:focus + .field__label,
+  &:not(:placeholder-shown) + .field__label
+    top: -7px
+    font-size: 12px
+    line-height: 14px
+    background-color: $backgroundColor
+    padding: 0 4px
+    
 .field__hint
   margin: 0 16px
   @include base-text
   font-size: 12px
+  color: #7E7E7E
 
 .error
   color: #CB3D40

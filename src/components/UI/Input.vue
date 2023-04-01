@@ -25,7 +25,7 @@ defineProps({
   },
   placeholder: {
     type: String,
-    default: 'Write here...'
+    default: '  '
   },
   accept: {
     type: String,
